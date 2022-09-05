@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <MyHeader />
+
     <MyMain />
+
     <MyFooter />
   </div>
 </template>
@@ -22,5 +24,6 @@ export default {
 </script>
 
 <style lang="scss">
+@import './style/general.scss'
 
 </style>
