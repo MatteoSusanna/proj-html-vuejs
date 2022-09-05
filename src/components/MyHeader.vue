@@ -1,5 +1,6 @@
 <template>
   <header>
+    <!-- barra di navigazione -->
     <div class="wrapper-menu">
         <img class="logo" src="../assets/img/logo.png" alt="logo">
         <ul>
@@ -12,6 +13,7 @@
         </ul>
     </div>
 
+    <!-- primo slider -->
     <div class="wrapper-jumbo-top">
         <div class="jumbo">
             <img src="../assets/img/slider_slide1_background.png" alt="">
@@ -129,8 +131,15 @@ export default {
             
         }
         .wrapper-jumbo-bot{
+            background-image: url('../assets/img/pattern.png');
             height: 100px;
-            background-color: $butterflu_bush;
+            color: white;
+            button{
+                background-color: $butterflu_bush;
+                color: white;
+                padding: 5px 10px;
+                border: 2px solid white;
+            }
         }
         
     }
