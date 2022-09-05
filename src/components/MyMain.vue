@@ -6,6 +6,8 @@
 
     <SectionSlider />
 
+    <SectionClasse />
+
   </main>
   
 
@@ -15,6 +17,7 @@
 import SectionWelcome from './SectionWelcome.vue'
 import SectionOverview from './SectionOverview.vue'
 import SectionSlider from './SectionSlider.vue'
+import SectionClasse from './SectionClasse.vue'
 
 export default {
     nome: 'MyMain',
@@ -22,6 +25,7 @@ export default {
       SectionWelcome,
       SectionOverview,
       SectionSlider,
+      SectionClasse,
     },
 }
 </script>
