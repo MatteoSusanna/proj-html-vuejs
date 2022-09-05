@@ -4,6 +4,8 @@
 
     <SectionOverview />
 
+    <SectionSlider />
+
   </main>
   
 
@@ -12,12 +14,14 @@
 <script>
 import SectionWelcome from './SectionWelcome.vue'
 import SectionOverview from './SectionOverview.vue'
+import SectionSlider from './SectionSlider.vue'
 
 export default {
     nome: 'MyMain',
     components:{
       SectionWelcome,
       SectionOverview,
+      SectionSlider,
     },
 }
 </script>
