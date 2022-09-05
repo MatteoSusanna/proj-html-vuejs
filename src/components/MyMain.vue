@@ -8,6 +8,11 @@
 
     <SectionClasse />
 
+    <SectionEducation />
+
+    <SectionImg />
+
+    <SectionMeet />
   </main>
   
 
@@ -18,6 +23,9 @@ import SectionWelcome from './SectionWelcome.vue'
 import SectionOverview from './SectionOverview.vue'
 import SectionSlider from './SectionSlider.vue'
 import SectionClasse from './SectionClasse.vue'
+import SectionEducation from './SectionEducation.vue'
+import SectionImg from './SectionImg.vue'
+import SectionMeet from './SectionMeet.vue'
 
 export default {
     nome: 'MyMain',
@@ -26,6 +34,9 @@ export default {
       SectionOverview,
       SectionSlider,
       SectionClasse,
+      SectionEducation,
+      SectionImg,
+      SectionMeet,
     },
 }
 </script>

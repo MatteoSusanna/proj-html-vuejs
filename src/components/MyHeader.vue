@@ -22,7 +22,7 @@
 
     <div class="wrapper-jumbo-bot">
         <div class="wrapper-menu">
-            <h2>How to Enroll Your Child to a Class?</h2>
+            <h3>How to Enroll Your Child to a Class?</h3>
             <button>LEARN MORE > </button>
         </div>
     </div>
