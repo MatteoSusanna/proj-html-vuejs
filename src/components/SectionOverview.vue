@@ -34,8 +34,9 @@
 
                 <!-- lista immagini -->
                 <div class="list-img">
-                    <div class="card-img" v-for="(img, indice) in slider1Array" :key="indice">
-                        <img :src="img.url" alt="bambino" @click="counterSlider = indice">
+                    <div class="card-img" v-for="(img, indice) in slider1Array" :key="indice" :class="(counterSlider == indice)?'active': ''">
+                        <img :src="img.url" alt="bambino" 
+                            @click="counterSlider = indice">
                     </div>
                 </div>
             </div>
@@ -100,6 +101,10 @@ export default {
 
 <style lang="scss">
 @import '../style/general.scss';
+
+.active{
+    border-bottom: 3px solid $blaze_orange;
+}
 
 h2, h4{
     color: $butterflu_bush;
