@@ -79,6 +79,9 @@ export default {
         .col{
             width: calc(100% / 4 - 1rem);
             text-align: center;
+            &:hover{
+                transform: scale(1.2);
+            }
         }
     }
 }

@@ -3,7 +3,7 @@
         <div class="text-center">
             <h2 class="pt">Meet Our Staff</h2>
             <p class="ptb">Our preschool program has four dedicated classes</p>
-            <img src="../assets/img/header_divider.png" alt="divisore">
+            <img class="pb" src="../assets/img/header_divider.png" alt="divisore">
         </div>
 
         <div class="row">
@@ -150,14 +150,18 @@ export default {
             .wrapper-social{
                 display: flex;
                 .social{
-                width: 50px;
-                height: 50px;
-                background-color: $blaze_orange;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                margin-right: 5px;
-            }
+                    width: 50px;
+                    height: 50px;
+                    background-color: $blaze_orange;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin-right: 5px;
+                    &:hover{
+                        transform: scale(1.1);
+                        border: 2px solid $butterflu_bush;
+                    }
+                }   
             }
            
         }

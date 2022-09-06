@@ -181,6 +181,10 @@ footer{
               border: 1px solid white;
               padding: 15px;
               margin: 5px 0;
+              &:hover{
+                background-color: white;
+                color: $butterflu_bush;
+              }
             }
           }
         }
@@ -222,6 +226,10 @@ footer{
         width: 60px;
         background-color: $blaze_orange;
         margin-left: 5px;
+        &:hover{
+          transform: scale(1.1);
+          border: 2px solid $butterflu_bush;
+        }
       };
     }
   }

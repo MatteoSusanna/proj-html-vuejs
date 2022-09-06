@@ -8,7 +8,7 @@
         <div class="wrapper-jumbo-bot">
         <div class="wrapper-menu">
             <h3>How to Enroll Your Child to a Class?</h3>
-            <button>LEARN MORE > </button>
+            <button>LEARN MORE <i class="fa-solid fa-angle-right"></i> </button>
         </div>
     </div>
     </section>
@@ -62,6 +62,10 @@ export default {
             color: white;
             padding: 5px 10px;
             border: 2px solid white;
+            &:hover{
+                    background-color: white;
+                    color: $butterflu_bush;
+                }
         }
     }
 }
