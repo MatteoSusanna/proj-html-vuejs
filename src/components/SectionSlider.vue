@@ -4,7 +4,7 @@
             <div class="col" v-for="(colonna, indice) in colsArray" :key="indice">
                 <div class="number">{{colonna.numero}}</div>
                 <h3 class="ptb">{{colonna.titolo}}</h3>
-                <p>{{colonna.descrizione}}</p>
+                <span>{{colonna.descrizione}}</span>
             </div>
         </div>
     </section>

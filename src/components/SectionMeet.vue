@@ -25,10 +25,13 @@
                 </div>
 
                 <div class="right">
+                    <div class="vingolette"><img src="../assets/img/quote.png" alt="virgolette"></div>
+                    
+                    <div></div>
                     <p>{{dati.descrizione}}</p>
                     <div class="wrapper-social">
                         <div class="social">
-                        <img :src="dati.social1" alt="social">
+                            <img :src="dati.social1" alt="social">
                         </div>
                         <div class="social">
                             <img :src="dati.social2" alt="social">
@@ -51,7 +54,7 @@ export default {
         return{
             meetArray:  [
                             {
-                                img: require('../assets/img/team_01.jpg'),
+                                img: require('../assets/img/team_04.jpg'),
                                 nome: 'Ruth Richie',
                                 ruolo: 'Teacher',
                                 descrizione: 'I have just finished my studies in Early Childhood Education, and i am also the kids yoga teacher here at Fable. I enjoy cooking, swimming and bike riding in my free time.',
@@ -60,7 +63,7 @@ export default {
                                 social3: require('../assets/img/pinterest.png'),
                             },
                             {
-                                img: require('../assets/img/team_02.jpg'),
+                                img: require('../assets/img/team_03.jpg'),
                                 nome: 'Katie Willmore',
                                 ruolo: 'Assistant Teacher',
                                 descrizione: 'My name is Katie. I grew up and studied in Canada. this is my second year at Fabie and love every minute of it, making the childrens learning experience fun.',
@@ -69,7 +72,7 @@ export default {
                                 social3: require('../assets/img/instagram.png'),
                             },
                             {
-                                img: require('../assets/img/team_03.jpg'),
+                                img: require('../assets/img/team_02.jpg'),
                                 nome: 'Angelica Watson',
                                 ruolo: 'Lead Teacher',
                                 descrizione: 'I hold a dagree in Early Childhood Education and an advanced English lenguage cerificate. I have been working as a kindergarten teacher since 2002.',
@@ -78,7 +81,7 @@ export default {
                                 social3: require('../assets/img/linkedin.png'),
                             },
                             {
-                                img: require('../assets/img/team_04.jpg'),
+                                img: require('../assets/img/team_01.jpg'),
                                 nome: 'Angela Lynn',
                                 ruolo: 'Teacher',
                                 descrizione: 'I have just finished my studies in Early Childhood Education, and i am also the kids yoga teacher here at Fable. I enjoy cooking, swimming and bike riding in my free time.',
@@ -110,9 +113,12 @@ export default {
     .wrapper-card{
         display: flex;
         flex-wrap: wrap;
+        margin-top: 50px;
         .card{
         display: flex;
         width: calc(100% / 2);
+        margin-bottom: 30px;
+        position: relative;
         .left{
             width: 50%;
             .img{
@@ -132,6 +138,15 @@ export default {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            .vingolette{
+                border: 1px solid $blaze_orange;
+                width: 90px;
+                height: 40px;
+                text-align: right;
+                padding: 0 10px;
+                position: absolute;
+                right: calc(50% - 70px);
+            }
             .wrapper-social{
                 display: flex;
                 .social{

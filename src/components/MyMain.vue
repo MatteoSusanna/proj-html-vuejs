@@ -13,6 +13,14 @@
     <SectionImg />
 
     <SectionMeet />
+
+    <SectionSlider2 />
+
+    <SectionWhat />
+
+    <SectionMap />
+
+    <SectionContact />
   </main>
   
 
@@ -26,6 +34,10 @@ import SectionClasse from './SectionClasse.vue'
 import SectionEducation from './SectionEducation.vue'
 import SectionImg from './SectionImg.vue'
 import SectionMeet from './SectionMeet.vue'
+import SectionSlider2 from './SectionSlider2.vue'
+import SectionWhat from './SectionWhat.vue'
+import SectionMap from './SectionMap.vue'
+import SectionContact from './SectionContact.vue'
 
 export default {
     nome: 'MyMain',
@@ -37,14 +49,14 @@ export default {
       SectionEducation,
       SectionImg,
       SectionMeet,
+      SectionSlider2,
+      SectionWhat,
+      SectionMap,
+      SectionContact,
     },
 }
 </script>
 
 <style lang="scss">
 @import '../style/general.scss';
-
-
-
-
 </style>

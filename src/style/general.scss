@@ -13,7 +13,11 @@ body{
 
 .ptb{
     padding: 20px 0;
-  }
+}
+
+.ptb-5{
+    padding: 5px 0;
+}
 
 .pt{
     padding-top: 30px;
@@ -22,8 +26,23 @@ body{
 .pb{
     padding-bottom: 30px;
 }
+
+.mr-20{
+    margin-right: 20px;
+}
+
+.mr-10{
+    margin-right: 10px;
+}
+
 .text-center{
     text-align: center;
+}
+
+.d-flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .wrapper-menu{
