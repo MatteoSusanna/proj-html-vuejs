@@ -3,7 +3,7 @@
         <div class="text-center">
             <h2 class="pt">Our Classes</h2>
             <p class="ptb">Our preschool program has four dedicated classes</p>
-            <img src="../assets/img/header_divider.png" alt="divisore">
+            <img class="pb" src="../assets/img/header_divider.png" alt="divisore">
         </div>
 
         <div class="row">

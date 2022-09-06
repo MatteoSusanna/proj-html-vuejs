@@ -7,7 +7,8 @@
             <li v-for='(voci, indice) in vociMenu' 
                 :key="indice" 
                 :class="(voci.active?'active-menu':'')">
-                    <img :src="voci.url" :alt="voci.voce">
+                    
+                    <img :src="voci.url" :alt="voci.voce" :class="(voci.active?'img-position-bot':'img-position-top')">
                     <div class="menu-text">{{voci.voce}}</div>
             </li>
         </ul>
@@ -16,7 +17,15 @@
     <!-- primo slider -->
     <div class="wrapper-jumbo-top">
         <div class="jumbo">
-            <img src="../assets/img/slider_slide1_background.png" alt="">
+            <div class="wrapper-slider">
+                <div class="slide" v-for="(img, indice) in slideArray" :key="indice">
+                    <img :src="img.url" alt="slide">
+                </div>
+            </div>
+            <div class="container-active">
+                <div class="active-slider" v-for="(img, indice) in slideArray" :key="indice"></div>
+            </div>
+            
         </div>
     </div>
 
@@ -71,7 +80,18 @@ export default {
                             'voce': 'Contact',
                             'active': false
                         },
-                    ]
+                    ],
+            slideArray: [
+                            {
+                                'url': require ('../assets/img/slider_slide3_img1.png'),
+                            },
+                            {
+                                'url': require ('../assets/img/slider_slide3_img2.png'),
+                            },
+                            {
+                                'url': require ('../assets/img/slider_slide3_img3.png'),
+                            },
+                        ],
         }
     }
 }
@@ -83,6 +103,12 @@ export default {
 .active-menu{
     background-color: $blaze_orange;
     color: white;
+}
+.img-position-bot{
+    object-position: bottom;
+}
+.img-position-top{
+    object-position: top;
 }
     header{
         .wrapper-menu{
@@ -99,18 +125,25 @@ export default {
             display: flex;
             justify-content: space-between;
             width: 500px;
-            height: 70px;
+            height: 100px;
                 li{
                     list-style: none;
                     display: flex;
                     flex-direction: column;
                     align-items: center;
                     justify-content: center;
+                    padding: 0 15px;
+                    &:hover{
+                        background-color: $blaze_orange;
+                        color: white;
+                    }
+                    &:hover > img{
+                        object-position: bottom;
+                    }
                     img{
                         height: 40px;
                         width: 40px;
                         object-fit: cover;
-                        object-position: top;
                         &:hover{
                             object-position: bottom;
                         }
@@ -119,13 +152,37 @@ export default {
             }
         }
         .wrapper-jumbo-top{
-            
             .jumbo{
+                background-image: url('../assets/img/slider_slide1_background.png');
                 height: 500px;
-                img{
-                width: 100%;
-                height: 100%;
-                object-fit: fill;
+                position: relative;
+
+                .wrapper-slider{
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    .slide{
+                        height: 150px;
+                        width: 150px;
+                        padding: 0 20px;
+                        img{
+                            width: 100%;
+                        }
+                    }
+                }
+                .container-active{
+                    position: absolute;
+                    bottom: 10%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    .active-slider{
+                        height: 15px;
+                        width: 50px;
+                        border: 2px solid $blaze_orange;
+                        display: inline-block;
+                        margin-right: 10px;
+                    }
                 }
             }
             

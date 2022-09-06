@@ -49,8 +49,15 @@ export default {
     background-image: url('../assets/img/parallax_01.jpg');
     background-position: center; 
     color: white;
-    padding: 20px;
     height: 500px;
+    .wrapper-img{
+        height: 500px;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
     .row{
         width: 1000px;
         height: 100%;
