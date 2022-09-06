@@ -17,15 +17,19 @@
     <!-- primo slider -->
     <div class="wrapper-jumbo-top">
         <div class="jumbo">
-            <div class="wrapper-slider">
-                <div class="slide" v-for="(img, indice) in slideArray" :key="indice" :class="(img.active?'flex-down': '')">
-                    <img :src="img.url" alt="slide">
+            <div class="wrapper-slider"
+                @keyup.right="next" 
+                @keyup.left="prev"      
+                tabindex="0">
+                
+                <div class="slide">
+                    <img :src="require ('../assets/img/team_01_0'+ counterSlideActive + '.jpg')" alt="slide">
                 </div>
             </div>
             <div class="container-active">
                 <div class="active-slider" 
                     v-for="(img, indice) in slideArray" :key="indice"
-                    :class="(img.active?'position-active': 'position-active-end')">
+                    :class="(counterSlideActive == indice?'position-active': 'position-active-end')">
                 </div>
             </div>
             
@@ -87,18 +91,32 @@ export default {
                     ],
             slideArray: [
                             {
-                                'url': require ('../assets/img/slider_slide3_img0.png'),
-                                'active': false,
-                            },
-                            {
-                                'url': require ('../assets/img/slider_slide3_img1.png'),
                                 'active': true,
                             },
                             {
-                                'url': require ('../assets/img/slider_slide3_img2.png'),
+                                'active': false,
+                            },
+                            {
                                 'active': false,
                             },
                         ],
+        }
+    },
+    methods:{
+        next(){
+            if(this.counterSlideActive == this.slideArray.length - 1){
+                this.counterSlideActive = 0;
+            }else{
+                this.counterSlideActive++;
+            }
+        },
+        prev(){
+            
+            if(this.counterSlideActive == 0){
+                this.counterSlideActive = this.slideArray.length - 1;
+            }else{
+                this.counterSlideActive--;
+            }
         }
     }
 }
@@ -178,12 +196,14 @@ export default {
                     display: flex;
                     align-items: center;
                     justify-content: center;
+                    outline: none;
                     .slide{
-                        height: 150px;
-                        width: 150px;
-                        padding: 0 20px;
+                        height: 300px;
+                        width: 300px;
+                        padding: 0 20px;                        
                         img{
                             width: 100%;
+                            border-radius: 50%;
                         }
                     }
                 }
@@ -202,7 +222,6 @@ export default {
                     }
                 }
             }
-            
         }
         .wrapper-jumbo-bot{
             background-image: url('../assets/img/pattern.png');
