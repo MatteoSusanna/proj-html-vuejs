@@ -18,12 +18,15 @@
     <div class="wrapper-jumbo-top">
         <div class="jumbo">
             <div class="wrapper-slider">
-                <div class="slide" v-for="(img, indice) in slideArray" :key="indice">
+                <div class="slide" v-for="(img, indice) in slideArray" :key="indice" :class="(img.active?'flex-down': '')">
                     <img :src="img.url" alt="slide">
                 </div>
             </div>
             <div class="container-active">
-                <div class="active-slider" v-for="(img, indice) in slideArray" :key="indice"></div>
+                <div class="active-slider" 
+                    v-for="(img, indice) in slideArray" :key="indice"
+                    :class="(img.active?'position-active': 'position-active-end')">
+                </div>
             </div>
             
         </div>
@@ -44,6 +47,7 @@ export default {
     nome: 'MyHeader',
     data(){
         return{
+            counterSlideActive: 0,
             vociMenu:[
                         {
                             'url': require ('../assets/img/home.png'),
@@ -83,13 +87,16 @@ export default {
                     ],
             slideArray: [
                             {
+                                'url': require ('../assets/img/slider_slide3_img0.png'),
+                                'active': false,
+                            },
+                            {
                                 'url': require ('../assets/img/slider_slide3_img1.png'),
+                                'active': true,
                             },
                             {
                                 'url': require ('../assets/img/slider_slide3_img2.png'),
-                            },
-                            {
-                                'url': require ('../assets/img/slider_slide3_img3.png'),
+                                'active': false,
                             },
                         ],
         }
@@ -99,6 +106,15 @@ export default {
 
 <style lang="scss">
 @import '../style/general.scss';
+.flex-down{
+    align-self: flex-end;
+}
+.position-active{
+    align-self: flex-start;
+}
+.position-active-end{
+    align-self: flex-end;
+}
 
 .active-menu{
     background-color: $blaze_orange;
@@ -158,7 +174,7 @@ export default {
                 position: relative;
 
                 .wrapper-slider{
-                    height: 100%;
+                    height: 80%;
                     display: flex;
                     align-items: center;
                     justify-content: center;
@@ -173,14 +189,15 @@ export default {
                 }
                 .container-active{
                     position: absolute;
+                    height: 30px;
                     bottom: 10%;
                     left: 50%;
                     transform: translate(-50%, -50%);
+                    display: flex;
                     .active-slider{
                         height: 15px;
                         width: 50px;
                         border: 2px solid $blaze_orange;
-                        display: inline-block;
                         margin-right: 10px;
                     }
                 }
