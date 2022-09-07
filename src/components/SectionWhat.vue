@@ -24,6 +24,9 @@
                 </div>
             </div>
         </div>
+        <div class="text-center">
+            <button>GO TO BLOG <i class="fa-solid fa-angle-right"></i></button>
+        </div>
     </section>
 </template>
 
@@ -75,8 +78,15 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 @import '../style/general.scss';
+button{
+    border: none;
+    background-color: $blaze_orange;
+    color: white;
+    padding: 10px;
+    margin-top: 30px;
+}
 
 #what{
     width: 1000px;

@@ -77,6 +77,9 @@ export default {
                 border-radius: 50%;
                 text-align: center;
                 line-height: 200px;
+                &:hover{
+                    background-color: $blaze_orange;
+                }
             }
         }
     }

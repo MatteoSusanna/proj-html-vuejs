@@ -48,6 +48,7 @@ export default {
             width: calc(100% / 4);
             img{
                 width: 100%;
+                height: 100%;
             }
         }
     }

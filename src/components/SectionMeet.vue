@@ -14,10 +14,16 @@
 
         <div class="wrapper-card">
             <div class="card" v-for="(dati, indice) in meetArray" :key="indice">
+
                 <div class="left">
                     <div class="img">
                         <img :src="dati.img" :alt="dati.nome">
+                        <div class="overPlus d-none">
+                            <i class="fa-solid fa-plus"></i>
+                        </div>
                     </div>
+                    
+
                     <div class="testo">
                         <h4>{{dati.nome}}</h4>
                         <span>{{dati.ruolo}}</span>
@@ -121,15 +127,39 @@ export default {
         position: relative;
         .left{
             width: 50%;
+            position: relative;
             .img{
                 img{
                     width: 100%;
                     object-fit: cover;
+                    &:hover ~ .overPlus{
+                        display: block;
+                    }  
                 }
             }
             .testo{
                 text-align: center;
                 margin: 20px 0;
+            }
+            .overPlus{
+                position: absolute;
+                bottom: 50%;
+                left: 50%;
+                transform: translate(-50%);
+                height: 80px;
+                width: 80px;
+                border-radius: 50%;
+                background-color: $butterflu_bush;
+                opacity: 0.5;
+                text-align: center;
+                line-height: 80px;
+                &:hover{
+                        display: block;
+                    }
+                i{
+                    color: white;
+                }
+
             }
         }
         .right{

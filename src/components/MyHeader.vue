@@ -29,8 +29,13 @@
             <div class="container-active">
                 <div class="active-slider" 
                     v-for="(img, indice) in slideArray" :key="indice"
-                    :class="(counterSlideActive == indice?'position-active': 'position-active-end')">
+                    :class="(counterSlideActive == indice?'position-active':'position-active-end')"
+                    @click="counterSlideActive = indice">
                 </div>
+            </div>
+            <div class="play-stop">
+                <i class="fa-solid fa-play fa-2x" @click="play"></i>
+                <i class="fa-solid fa-pause fa-2x" @click="reset"></i>
             </div>
             
         </div>
@@ -51,6 +56,8 @@ export default {
     nome: 'MyHeader',
     data(){
         return{
+            verifica: false,
+            timer: 0,
             counterSlideActive: 0,
             vociMenu:[
                         {
@@ -117,8 +124,26 @@ export default {
             }else{
                 this.counterSlideActive--;
             }
+        },
+
+
+        autoPlay(){
+            this.next()
+        },
+        play(){
+            if(this.verifica == true){
+                this.timer = setInterval(this.autoPlay,3000);
+                this.verifica = false;  
+            }
+        },
+        reset(){
+            clearInterval(this.timer)
+            this.verifica = true;
         }
-    }
+    },
+    created(){
+        this.timer = setInterval(this.autoPlay,3000);        
+    },
 }
 </script>
 
@@ -219,6 +244,15 @@ export default {
                         width: 50px;
                         border: 2px solid $blaze_orange;
                         margin-right: 10px;
+                    }
+                }
+                .play-stop{
+                    i{
+                        margin: 0 10px;
+                        color: $blaze_orange;
+                        &:active{
+                            transform: scale(0.9);
+                        }
                     }
                 }
             }
