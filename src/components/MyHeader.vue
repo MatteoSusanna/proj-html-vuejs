@@ -6,9 +6,10 @@
         <ul>
             <li v-for='(voci, indice) in vociMenu' 
                 :key="indice" 
-                :class="(voci.active?'active-menu':'')">
+                :class="((counter == indice)?'active-menu':'')"
+                @click="counter = indice">
                     
-                    <img :src="voci.url" :alt="voci.voce" :class="(voci.active?'img-position-bot':'img-position-top')">
+                    <img :src="voci.url" :alt="voci.voce" :class="(counter == indice?'img-position-bot':'img-position-top')">
                     <div class="menu-text">{{voci.voce}}</div>
             </li>
         </ul>
@@ -58,6 +59,7 @@ export default {
         return{
             verifica: false,
             timer: 0,
+            counter: 0,
             counterSlideActive: 0,
             vociMenu:[
                         {

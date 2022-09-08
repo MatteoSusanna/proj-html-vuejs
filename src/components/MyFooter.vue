@@ -136,14 +136,13 @@ export default {
                             data: 'September 2014',
                           },
                         ],
-        socialFooter: [
-                        require('../assets/img/behance.png'),
-                        require('../assets/img/dribbble.png'),
-                        require('../assets/img/envato.png'),
-                        require('../assets/img/facebook.png'),
-                        require('../assets/img/twitter.png'),
-
-                      ]
+          socialFooter: [
+                          require('../assets/img/behance.png'),
+                          require('../assets/img/dribbble.png'),
+                          require('../assets/img/envato.png'),
+                          require('../assets/img/facebook.png'),
+                          require('../assets/img/twitter.png')
+                        ]
       }
     },
 }

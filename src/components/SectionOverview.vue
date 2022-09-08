@@ -21,7 +21,7 @@
             </div>
         </div>
 
-        <!-- primo slider -->
+        <!-- secondo slider -->
         <div class="col">
             <div class="wrapper-slider1">
                 <!-- immagine attiva -->
